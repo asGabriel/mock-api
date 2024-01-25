@@ -9,7 +9,7 @@ import { ApiTags } from '@nestjs/swagger';
 export class ClientController {
   constructor(private readonly clientService: ClientService) {}
 
-  private readonly logger = new Logger();
+  private readonly logger = new Logger(ClientController.name);
 
   @Post()
   create(@Body() createClientDto: CreateClientDto) {
